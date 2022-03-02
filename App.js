@@ -47,7 +47,16 @@ const App: () => Node = () => {
             setUser(user)
             setInit(true)
         })
-
+        let localNotification = Notifications.postLocalNotification({
+            body: "Local notification!",
+            title: "Local Notification Title",
+            sound: "chime.aiff",
+            silent: false,
+            category: "SOME_CATEGORY",
+            userInfo: { },
+            fireDate: new Date(),
+            extra: "data"
+        });
     }, [])
 
     return (
